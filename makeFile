@@ -1,0 +1,27 @@
+# Name of your Docker image
+IMAGE_NAME=yt-application
+
+# Docker container name
+CONTAINER_NAME=vigorous_lederberg
+
+# Dockerfile location
+DOCKERFILE=Dockerfile
+
+# Build Docker image
+build:
+	docker build -t $(yt-application) -f $(Dockerfile) .
+
+# Run Docker container
+run:
+	docker run -p3000:3000 $(yt-application)
+
+# Stop Docker container
+stop:
+	docker stop $()
+
+# Remove Docker container
+rm:
+	docker rm $()
+
+# Build and run Docker container
+all: build run
